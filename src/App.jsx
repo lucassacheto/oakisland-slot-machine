@@ -4,11 +4,9 @@ import { useState } from 'react'
 
 import './App.css'
 import Score from './components/Score'
-
-
+import Landing from './components/Landing'
 
 function App() {
-
 
   const [credits, setCredits] = useState(9999)
   const [win, setWin] = useState(0)
@@ -39,14 +37,12 @@ function App() {
     logo: '50' 
   }
   
-  
   function randomize(){
-  
     let items = [];
     for (let i = 0; i < 4; i++) {
         let randomNumber = Math.floor(Math.random() * 20); // Generate a random number between 0 and 19
+        //let randomNumber = 1 // EPIC WIN
         items.push(getName(randomNumber));
-        
     }
     return items;
   }
@@ -76,14 +72,31 @@ function App() {
       const validatePoint2 = getCommon(validatePoint , randomCol3)
       console.log(validatePoint2);
 
+      if (validatePoint2.length !== 0) {
+        //setWin(elementsScores[validatePoint3[0]])
+        console.log(" WIN ");
+
+        const allNotWin = document.querySelectorAll('.spin img:not(.'+validatePoint2[0]+')');
+        allNotWin.forEach(item => {
+          item.classList.add('lost');
+        });
+        console.log(allNotWin);
+
+        const allWin = document.querySelectorAll('.spin img.'+validatePoint2[0]);
+        allWin.forEach(item => {
+          const itemName = item.className;
+          console.log( elementsScores[itemName] * allWin.length);
+          setWin(elementsScores[itemName] * allWin.length)
+          setCredits(credits + elementsScores[itemName] * allWin.length)
+        });
+
+      }
+
       const validatePoint3 = getCommon(validatePoint2 , randomCol4)
       console.log(validatePoint3);
 
       const validatePoint4 = getCommon(validatePoint3 , randomCol5)
       console.log(validatePoint4);
-
-      // console.log(randomCol3);
-      //console.log(elementsScores[validatePoint[0]]);
   
     }else{
       console.log("no");
@@ -94,13 +107,12 @@ function App() {
   function rotate(slotItems){
     
     const animated = document.getElementById("rotate");
-    console.log(animated);
+    //console.log(animated);
     animated.addEventListener("animationstart", () => {
       console.log("Animation started");
     });
 
     animated.classList.toggle("active")
-    
 
     animated.addEventListener("animationend", () => {
       console.log("Animation ended");
@@ -110,88 +122,106 @@ function App() {
         item.classList.remove('animate');
        });
 
+      const listStars = document.querySelectorAll('svg')
+      const AllStars = document.querySelectorAll('svg g')
+      console.log(AllStars);
+      console.log(listStars.length);
+      listStars.forEach(item => {
+        item.style.left = Math.floor(Math.random() * 800) + 'px';
+        item.style.top = Math.floor(Math.random() * 500) + 'px';
+      });
+      AllStars.forEach(item => {
+        item.style.animationDuration = Math.random() * 5 + 's';
+      });
     });
- 
+
+    animated.addEventListener("animationstart", () => {
+      document.getElementById("btnRun").style.pointerEvents = 'none';
+      document.getElementById("btnRun").style.opacity = '0.5';
+    });
+
+    animated.addEventListener("animationend", () => {      
+      setTimeout(() => {
+        document.getElementById("btnRun").style.pointerEvents = 'auto';
+        document.getElementById("btnRun").style.opacity = '1';
+      }, 1000);
+    });
+    
+
   }
   
   function run(){
-
+    
+    setWin(0)
+    
     let randomCol1 = randomize();
     let randomCol2 = randomize();
     let randomCol3 = randomize();
     let randomCol4 = randomize();
     let randomCol5 = randomize();
   
-    getPoints(randomCol1, randomCol2, randomCol3, randomCol4, randomCol5)
-  
-    // console.log(randomCol1);
-    // console.log(randomCol2);
-    // console.log(randomCol3);
-    // console.log(randomCol4);
-    // console.log(randomCol5);
-  
     const getCol1 = document.getElementById('col1');
     const getCol2 = document.getElementById('col2');
     const getCol3 = document.getElementById('col3');
     const getCol4 = document.getElementById('col4');
     const getCol5 = document.getElementById('col5');
-  
+  ""
+    getCol1.innerHTML = ""
+    getCol2.innerHTML = "";
+    getCol3.innerHTML = "";
+    getCol4.innerHTML = "";
+    getCol5.innerHTML = "";
     
-  
     function startSpin() {
       const slotItems = document.querySelectorAll('.spin');
       slotItems.forEach(item => {
        item.classList.add('animate');
       });
-      console.log(slotItems);
+      //console.log(slotItems);
       rotate(slotItems)
     }
-    
-  
-    getCol1.innerHTML = "";
-    getCol2.innerHTML = "";
-    getCol3.innerHTML = "";
-    getCol4.innerHTML = "";
-    getCol5.innerHTML = "";
-
     startSpin()
   
-    
-    // document.getElementById("col1").className = "animate";
-    // document.getElementById("col2").className = "animate";
-    // document.getElementById("col3").className = "animate";
-    // document.getElementById("col4").className = "animate";
-    // document.getElementById("col5").className = "animate";
-  
     for (let i = 0; i < 4; i++) {
-        getCol1.innerHTML += '<img src="/public/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+'>';
-        getCol2.innerHTML += '<img src="/public/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol1[i]+'>';
-        getCol3.innerHTML += '<img src="/public/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol1[i]+'>';
-        getCol4.innerHTML += '<img src="/public/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol1[i]+'>';
-        getCol5.innerHTML += '<img src="/public/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol1[i]+'>';
+        getCol1.innerHTML += '<img src="/public/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
+        getCol2.innerHTML += '<img src="/public/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
+        getCol3.innerHTML += '<img src="/public/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
+        getCol4.innerHTML += '<img src="/public/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
+        getCol5.innerHTML += '<img src="/public/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
     }
   
     setCredits(credits - 1.0 )
     
+    getPoints(randomCol1, randomCol2, randomCol3, randomCol4, randomCol5)
+
   }
 
   return (
     <>
 
-      <div className="bg">
+      <Landing />
 
-        <div id="display" className="display">
-            <div id="col1" className="spin"></div>
-            <div id="col2" className="spin"></div>
-            <div id="col3" className="spin"></div>
-            <div id="col4" className="spin"></div>
-            <div id="col5" className="spin"></div>
+      <div className="windowSize">
+      <p><img src="/public/piratesorry.png" className="pirate-sorry" /></p>
+        <p>PLEASE RESIZE WINDOW FOR BETTER EXPERIENCE</p>
+      </div>
+
+      <div className="contentWrapper">
+        <div className="bg">
+
+          <div id="display" className="display">
+              <div id="col1" className="spin"></div>
+              <div id="col2" className="spin"></div>
+              <div id="col3" className="spin"></div>
+              <div id="col4" className="spin"></div>
+              <div id="col5" className="spin"></div>
+          </div>
+
+          <a id="btnRun" onClick={run}><img id='rotate' src='/public/btnRun.png' /></a>
+
+          <Score credits={credits} win={win}  />
+
         </div>
-
-        <a id="btnRun" onClick={run}><img id='rotate' src='/public/btnRun.png' /></a>
-
-        <Score credits={credits} win={win}  />
-
       </div>
     </>
   )

@@ -1,0 +1,9 @@
+<svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="stars">
+<rect id="top" x="3" width="1" height="3" fill="#FFEC68"/>
+<rect id="left" x="3" y="3" width="1" height="3" transform="rotate(90 3 3)" fill="#FFEC68"/>
+<rect id="bottom" x="3" y="4" width="1" height="3" fill="#FFD335"/>
+<rect id="right" x="4" y="4" width="1" height="3" transform="rotate(-90 4 4)" fill="#FFD335"/>
+<rect id="center" x="3" y="3" width="1" height="1" fill="white"/>
+</g>
+</svg>
