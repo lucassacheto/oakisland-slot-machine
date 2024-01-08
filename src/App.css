@@ -47,14 +47,13 @@ body {
         top: -500px;
     }
     100% {
-        top: 140px;
+        top: 0px;
     }
 }
 
 .animate{
     animation: slideDown 150ms ease-in;
 }
-
 
 #col1{
     margin-right: 60px;
@@ -94,7 +93,7 @@ a#btnRun{
 
 #rotate.active {
 	/* transition: transform 600ms ease-in-out; */
-    animation: spin 400ms ease-in-out;
+    animation: spin 500ms ease-in-out;
     filter: blur(1px);
 }
 

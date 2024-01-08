@@ -6,6 +6,24 @@ import TreasureWin from '../assets/treasurechest-win.png';
 
 function Score({credits, win}){
 
+    if (win !== 0){
+        
+        // document.getElementById("epicwin").pause();
+        // document.getElementById("epicwin").currentTime = 0;
+
+        if (win >= 50) {
+            setTimeout(() => {
+                document.getElementById("epicwin").play();    
+            });
+        }
+        if (win >= 10) {
+            setTimeout(() => {
+                document.getElementById("bigwin").play();
+            }, 1000);
+        }
+    }
+    
+
     return (
         <>
         <div className="score">
@@ -32,9 +50,11 @@ function Score({credits, win}){
                         {Array(win)
                             .fill(true)
                             .map((item, index) => (
-                            <Stars key={index} id={'star'+index} />
-                        ))} 
+                                <Stars key={index} id={'star'+index} />
+                            ))   
+                        }
                         <span className="big">BIG WIN <br />{win}</span>
+                        
                         </>
                     : win <= 10 ?
                     <>

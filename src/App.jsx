@@ -6,14 +6,23 @@ import './App.css'
 import Score from './components/Score'
 import Landing from './components/Landing'
 
+
+import IntroSound from '/public//bgIntro.mp4'
+import BgSong from '/public//bgSong.mp4'
+import RotateSound from '/public//rotate.mp3'
+import BigWin from '/public/bigwin.wav';
+import EpicWin from '/public/epicwin.mp4';
+
 function App() {
 
   const [credits, setCredits] = useState(9999)
   const [win, setWin] = useState(0)
 
+  // ELEMENTS NAMES TO LOAD THE IMAGES
   const elementsNames = [
     'rick', 'marty', 'craig', 'dan', 'gary', 'alex', 'jack', 'cross', 'pit', 'billy', 'bronze', 'silver', 'gold', 'brooch', 'fiber', 'bones', 'chain', 'map', 'coin', 'logo']
   
+  // ELEMENT SCORES/POINTS
   const elementsScores = { 
     rick: '10', 
     marty: '10', 
@@ -36,7 +45,35 @@ function App() {
     coin: '5', 
     logo: '50' 
   }
-  
+
+  // PRELOAD IMAGES
+  window.onload = function() {
+    
+    const getCol1 = document.getElementById('col1');
+    const getCol2 = document.getElementById('col2');
+    const getCol3 = document.getElementById('col3');
+    const getCol4 = document.getElementById('col4');
+    const getCol5 = document.getElementById('col5');
+
+    
+    getCol1.innerHTML += 
+    '<img src="/public/imgItems/' + elementsNames[1] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[2] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[3] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[4] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+
+    getCol2.innerHTML +=
+    '<img src="/public/imgItems/' + elementsNames[5] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[6] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[7] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[8] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+
+    getCol3.innerHTML +=
+    '<img src="/public/imgItems/' + elementsNames[9] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[10] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[11] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[12] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+
+    getCol4.innerHTML +=
+    '<img src="/public/imgItems/' + elementsNames[13] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[14] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[15] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[16] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+
+    getCol5.innerHTML +=
+    '<img src="/public/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/public/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    
+  }
+
+  // RANDOMIZE NUMBER IN 4 ARRAYS 
   function randomize(){
     let items = [];
     for (let i = 0; i < 4; i++) {
@@ -47,6 +84,7 @@ function App() {
     return items;
   }
   
+  // GET SPECIFIC NAME FROM ARRAY RANDOMIZED
   function getName(n){
     for (let i = 0; i < elementsNames.length; i++) {
         if (i === n) {
@@ -55,61 +93,72 @@ function App() {
     }
   }
   
+  // CHECK COLLUMNS ARE EQUAL IN AT LEAST 3 ELEMENTS TO SCORE
   function getPoints(randomCol1, randomCol2, randomCol3, randomCol4, randomCol5){
     
     const getCommon = (one, two) => {
       return one.filter(num => two.includes(num))
     }
     
-    console.log(randomCol1);
     const validatePoint = getCommon(randomCol1, randomCol2)
   
     if( validatePoint.length !== 0 ){
       
       // const validatePoint = getCommon(validatePoint , randomCol3)
-      console.log(validatePoint);
+      //console.log(validatePoint);
 
       const validatePoint2 = getCommon(validatePoint , randomCol3)
-      console.log(validatePoint2);
+      //console.log(validatePoint2);
 
       if (validatePoint2.length !== 0) {
         //setWin(elementsScores[validatePoint3[0]])
-        console.log(" WIN ");
+        //console.log(" WIN ");
 
         const allNotWin = document.querySelectorAll('.spin img:not(.'+validatePoint2[0]+')');
         allNotWin.forEach(item => {
           item.classList.add('lost');
         });
-        console.log(allNotWin);
+        //console.log(allNotWin);
 
         const allWin = document.querySelectorAll('.spin img.'+validatePoint2[0]);
         allWin.forEach(item => {
           const itemName = item.className;
-          console.log( elementsScores[itemName] * allWin.length);
+          //console.log( elementsScores[itemName] * allWin.length);
           setWin(elementsScores[itemName] * allWin.length)
           setCredits(credits + elementsScores[itemName] * allWin.length)
         });
 
+      }else{
+        console.log("BETTER LUCK NEXT TIME");
       }
 
       const validatePoint3 = getCommon(validatePoint2 , randomCol4)
-      console.log(validatePoint3);
+      //console.log(validatePoint3);
 
       const validatePoint4 = getCommon(validatePoint3 , randomCol5)
-      console.log(validatePoint4);
+      //console.log(validatePoint4);
   
     }else{
-      console.log("no");
+      console.log("BETTER LUCK NEXT TIME");
     }
   
   }
   
   function rotate(slotItems){
+
     
+    //const animated = document.getElementById("rotate");
     const animated = document.getElementById("rotate");
     //console.log(animated);
     animated.addEventListener("animationstart", () => {
       console.log("Animation started");
+      
+      document.getElementById("bgSong").volume = 0.15;
+      document.getElementById("rotateSound").play();
+
+      document.getElementById("btnRun").style.pointerEvents = 'none';
+      document.getElementById("btnRun").style.opacity = '0.5';
+
     });
 
     animated.classList.toggle("active")
@@ -124,8 +173,8 @@ function App() {
 
       const listStars = document.querySelectorAll('svg')
       const AllStars = document.querySelectorAll('svg g')
-      console.log(AllStars);
-      console.log(listStars.length);
+      //console.log(AllStars);
+      //console.log(listStars.length);
       listStars.forEach(item => {
         item.style.left = Math.floor(Math.random() * 800) + 'px';
         item.style.top = Math.floor(Math.random() * 500) + 'px';
@@ -133,45 +182,24 @@ function App() {
       AllStars.forEach(item => {
         item.style.animationDuration = Math.random() * 5 + 's';
       });
-    });
 
-    animated.addEventListener("animationstart", () => {
-      document.getElementById("btnRun").style.pointerEvents = 'none';
-      document.getElementById("btnRun").style.opacity = '0.5';
-    });
+      document.getElementById("bgSong").volume = 0.10;
 
-    animated.addEventListener("animationend", () => {      
       setTimeout(() => {
         document.getElementById("btnRun").style.pointerEvents = 'auto';
         document.getElementById("btnRun").style.opacity = '1';
       }, 1000);
+
     });
+
     
 
   }
   
   function run(){
-    
+
     setWin(0)
-    
-    let randomCol1 = randomize();
-    let randomCol2 = randomize();
-    let randomCol3 = randomize();
-    let randomCol4 = randomize();
-    let randomCol5 = randomize();
-  
-    const getCol1 = document.getElementById('col1');
-    const getCol2 = document.getElementById('col2');
-    const getCol3 = document.getElementById('col3');
-    const getCol4 = document.getElementById('col4');
-    const getCol5 = document.getElementById('col5');
-  ""
-    getCol1.innerHTML = ""
-    getCol2.innerHTML = "";
-    getCol3.innerHTML = "";
-    getCol4.innerHTML = "";
-    getCol5.innerHTML = "";
-    
+
     function startSpin() {
       const slotItems = document.querySelectorAll('.spin');
       slotItems.forEach(item => {
@@ -181,6 +209,25 @@ function App() {
       rotate(slotItems)
     }
     startSpin()
+    
+    let randomCol1 = randomize();
+    let randomCol2 = randomize();
+    let randomCol3 = randomize();
+    let randomCol4 = randomize();
+    let randomCol5 = randomize();
+    
+    const getCol1 = document.getElementById('col1');
+    const getCol2 = document.getElementById('col2');
+    const getCol3 = document.getElementById('col3');
+    const getCol4 = document.getElementById('col4');
+    const getCol5 = document.getElementById('col5');
+  
+    getCol1.innerHTML = ""
+    getCol2.innerHTML = "";
+    getCol3.innerHTML = "";
+    getCol4.innerHTML = "";
+    getCol5.innerHTML = "";
+  
   
     for (let i = 0; i < 4; i++) {
         getCol1.innerHTML += '<img src="/public/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
@@ -190,7 +237,7 @@ function App() {
         getCol5.innerHTML += '<img src="/public/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
     }
   
-    setCredits(credits - 1.0 )
+    setCredits(credits - 1.0)
     
     getPoints(randomCol1, randomCol2, randomCol3, randomCol4, randomCol5)
 
@@ -200,6 +247,13 @@ function App() {
     <>
 
       <Landing />
+
+      <audio id="introSound" src={IntroSound} loop></audio>
+      <audio id="bgSong" src={BgSong} loop></audio>
+      <audio id="rotateSound" src={RotateSound}></audio>
+      <audio id="bigwin" src={BigWin}></audio>
+      <audio id="epicwin" src={EpicWin}></audio>
+      
 
       <div className="windowSize">
       <p><img src="/public/piratesorry.png" className="pirate-sorry" /></p>

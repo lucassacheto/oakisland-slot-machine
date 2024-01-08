@@ -3,6 +3,11 @@ function landing() {
 
   const closeWelcome = () => {
     document.getElementsByClassName("overlay")[0].classList.add("hide");
+    document.getElementById("introSound").play()
+    document.getElementById("introSound").volume = 0.2
+    document.getElementById("bgSong").play()
+    document.getElementById("bgSong").volume = 0.10
+    
   }
 
   return (
