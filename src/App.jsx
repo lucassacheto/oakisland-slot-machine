@@ -58,19 +58,19 @@ function App() {
 
     
     getCol1.innerHTML += 
-    '<img src="/src/assets/imgItems/' + elementsNames[1] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[2] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[3] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[4] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src="./src/assets/imgItems/' + elementsNames[1] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[2] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[3] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[4] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol2.innerHTML +=
-    '<img src="/src/assets/imgItems/' + elementsNames[5] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[6] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[7] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[8] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src="./src/assets/imgItems/' + elementsNames[5] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[6] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[7] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[8] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol3.innerHTML +=
-    '<img src="/src/assets/imgItems/' + elementsNames[9] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[10] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[11] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[12] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src="./src/assets/imgItems/' + elementsNames[9] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[10] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[11] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[12] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol4.innerHTML +=
-    '<img src="/src/assets/imgItems/' + elementsNames[13] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[14] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[15] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[16] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src="./src/assets/imgItems/' + elementsNames[13] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[14] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[15] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[16] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol5.innerHTML +=
-    '<img src="/src/assets/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/src/assets/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src="./src/assets/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
     
   }
 
@@ -232,11 +232,11 @@ function App() {
   
   
     for (let i = 0; i < 4; i++) {
-        getCol1.innerHTML += '<img src="/src/assets/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
-        getCol2.innerHTML += '<img src="/src/assets/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
-        getCol3.innerHTML += '<img src="/src/assets/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
-        getCol4.innerHTML += '<img src="/src/assets/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
-        getCol5.innerHTML += '<img src="/src/assets/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
+        getCol1.innerHTML += '<img src="./src/assets/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
+        getCol2.innerHTML += '<img src="./src/assets/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
+        getCol3.innerHTML += '<img src="./src/assets/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
+        getCol4.innerHTML += '<img src="./src/assets/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
+        getCol5.innerHTML += '<img src="./src/assets/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
     }
   
     setCredits(credits - 1.0)
@@ -273,7 +273,7 @@ function App() {
               <div id="col5" className="spin"></div>
           </div>
 
-          <a id="btnRun" onClick={run}><img id='rotate' src='/src/assets/btnRun.png' /></a>
+          <a id="btnRun" onClick={run}><img id='rotate' src='./src/assets/btnRun.png' /></a>
 
           <Score credits={credits} win={win}  />
 
