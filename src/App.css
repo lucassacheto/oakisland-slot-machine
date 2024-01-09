@@ -14,7 +14,7 @@ body {
 }
 
 .bg{
-    background: url("/src/assets/imgItems/bg.jpg");
+    background: url("/src/assets/bg.jpg");
     background-size: cover;
     width: 1280px;
     height: 790px;

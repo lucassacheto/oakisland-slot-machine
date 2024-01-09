@@ -13,27 +13,6 @@ import RotateSound from '/src/assets/rotate.mp3'
 import BigWin from '/src/assets/bigwin.wav';
 import EpicWin from '/src/assets/epicwin.mp4';
 
-import Rick from '/src/assets/imgItems/rick.jpg';
-import Marty from '/src/assets/imgItems/marty.jpg';
-import Craig from '/src/assets/imgItems/craig.jpg';
-import Dan from '/src/assets/imgItems/dan.jpg';
-import Gary from '/src/assets/imgItems/gary.jpg';
-import Alex from '/src/assets/imgItems/alex.jpg';
-import Jack from '/src/assets/imgItems/jack.jpg';
-import Cross from '/src/assets/imgItems/cross.jpg';
-import Pit from '/src/assets/imgItems/pit.jpg';
-import Billy from '/src/assets/imgItems/billy.jpg';
-import Bronze from '/src/assets/imgItems/bronze.jpg';
-import Silver from '/src/assets/imgItems/silver.jpg';
-import Gold from '/src/assets/imgItems/gold.jpg';
-import Brooch from '/src/assets/imgItems/brooch.jpg';
-import Fiber from '/src/assets/imgItems/fiber.jpg';
-import Bones from '/src/assets/imgItems/bones.jpg';
-import Chain from '/src/assets/imgItems/chain.jpg';
-import Map from '/src/assets/imgItems/map.jpg';
-import Coin from '/src/assets/imgItems/coin.jpg';
-import Logo from '/src/assets/imgItems/logo.jpg';
-
 import BtnRun from '/src/assets/btnRun.png';
 
 function App() {
@@ -80,19 +59,19 @@ function App() {
 
     
     getCol1.innerHTML += 
-    '<img src='+Rick+'> <img src='+Marty+'> <img src='+Craig+'> <img src='+Dan+'>';
+    '<img src="/imgItems/' + elementsNames[1] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[2] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[3] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[4] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol2.innerHTML +=
-    '<img src='+Gary+'> <img src='+Alex+'> <img src='+Jack+'> <img src='+Cross+'>';
+    '<img src="/imgItems/' + elementsNames[5] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[6] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[7] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[8] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol3.innerHTML +=
-    '<img src='+Pit+'> <img src='+Billy+'> <img src='+Bronze+'> <img src='+Silver+'>';
+    '<img src="/imgItems/' + elementsNames[9] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[10] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[11] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[12] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol4.innerHTML +=
-    '<img src='+Gold+'> <img src='+Brooch+'> <img src='+Fiber+'> <img src='+Bones+'>';
+    '<img src="/imgItems/' + elementsNames[13] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[14] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[15] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[16] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
 
     getCol5.innerHTML +=
-    '<img src='+Chain+'> <img src='+Map+'> <img src='+Coin+'> <img src='+Logo+'>';
+    '<img src="/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
     
   }
 
@@ -100,8 +79,8 @@ function App() {
   function randomize(){
     let items = [];
     for (let i = 0; i < 4; i++) {
-        //let randomNumber = Math.floor(Math.random() * 20); // Generate a random number between 0 and 19
-        let randomNumber = 5 // EPIC WIN
+        let randomNumber = Math.floor(Math.random() * 20); // Generate a random number between 0 and 19
+        //let randomNumber = 5 // EPIC WIN
         items.push(getName(randomNumber));
     }
     return items;
@@ -246,8 +225,6 @@ function App() {
     const getCol4 = document.getElementById('col4');
     const getCol5 = document.getElementById('col5');
   
-    console.log(randomCol1);
-
     getCol1.innerHTML = ""
     getCol2.innerHTML = "";
     getCol3.innerHTML = "";
@@ -256,11 +233,11 @@ function App() {
   
   
     for (let i = 0; i < 4; i++) {
-        getCol1.innerHTML += '<img src="/src/assets/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
-        getCol2.innerHTML += '<img src="/src/assets/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
-        getCol3.innerHTML += '<img src="/src/assets/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
-        getCol4.innerHTML += '<img src="/src/assets/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
-        getCol5.innerHTML += '<img src="/src/assets/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
+        getCol1.innerHTML += '<img src="/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
+        getCol2.innerHTML += '<img src="/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
+        getCol3.innerHTML += '<img src="/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
+        getCol4.innerHTML += '<img src="/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
+        getCol5.innerHTML += '<img src="/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
     }
   
     setCredits(credits - 1.0)
