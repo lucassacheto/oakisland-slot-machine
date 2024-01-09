@@ -13,6 +13,26 @@ import RotateSound from '/src/assets/rotate.mp3'
 import BigWin from '/src/assets/bigwin.wav';
 import EpicWin from '/src/assets/epicwin.mp4';
 
+import Rick from '/src/assets/imgItems/rick.jpg';
+import Marty from '/src/assets/imgItems/marty.jpg';
+import Craig from '/src/assets/imgItems/craig.jpg';
+import Dan from '/src/assets/imgItems/dan.jpg';
+import Gary from '/src/assets/imgItems/gary.jpg';
+import Alex from '/src/assets/imgItems/alex.jpg';
+import Jack from '/src/assets/imgItems/jack.jpg';
+import Cross from '/src/assets/imgItems/cross.jpg';
+import Pit from '/src/assets/imgItems/pit.jpg';
+import Billy from '/src/assets/imgItems/billy.jpg';
+import Bronze from '/src/assets/imgItems/bronze.jpg';
+import Silver from '/src/assets/imgItems/silver.jpg';
+import Gold from '/src/assets/imgItems/gold.jpg';
+import Brooch from '/src/assets/imgItems/brooch.jpg';
+import Fiber from '/src/assets/imgItems/fiber.jpg';
+import Bones from '/src/assets/imgItems/bones.jpg';
+import Chain from '/src/assets/imgItems/chain.jpg';
+import Map from '/src/assets/imgItems/map.jpg';
+import Coin from '/src/assets/imgItems/coin.jpg';
+import Logo from '/src/assets/imgItems/logo.jpg';
 
 function App() {
 
@@ -58,19 +78,19 @@ function App() {
 
     
     getCol1.innerHTML += 
-    '<img src="./src/assets/imgItems/' + elementsNames[1] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[2] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[3] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[4] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src='+Rick+'> <img src='+Marty+'> <img src='+Craig+'> <img src='+Dan+'>';
 
     getCol2.innerHTML +=
-    '<img src="./src/assets/imgItems/' + elementsNames[5] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[6] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[7] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[8] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src='+Gary+'> <img src='+Alex+'> <img src='+Jack+'> <img src='+Cross+'>';
 
     getCol3.innerHTML +=
-    '<img src="./src/assets/imgItems/' + elementsNames[9] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[10] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[11] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[12] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src='+Pit+'> <img src='+Billy+'> <img src='+Bronze+'> <img src='+Silver+'>';
 
     getCol4.innerHTML +=
-    '<img src="./src/assets/imgItems/' + elementsNames[13] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[14] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[15] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[16] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src='+Gold+'> <img src='+Brooch+'> <img src='+Fiber+'> <img src='+Bones+'>';
 
     getCol5.innerHTML +=
-    '<img src="./src/assets/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="./src/assets/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
+    '<img src='+Chain+'> <img src='+Map+'> <img src='+Coin+'> <img src='+Logo+'>';
     
   }
 
