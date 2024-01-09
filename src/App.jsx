@@ -1,6 +1,6 @@
 
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import Score from './components/Score'
@@ -14,6 +14,8 @@ import BigWin from '/src/assets/bigwin.wav';
 import EpicWin from '/src/assets/epicwin.mp4';
 
 import BtnRun from '/src/assets/btnRun.png';
+
+import PirateSorry from '/src/assets/piratesorry.png';
 
 function App() {
 
@@ -48,8 +50,9 @@ function App() {
     logo: '50' 
   }
 
+
   // PRELOAD IMAGES
-  window.onload = function() {
+  window.onload = () => {
     
     const getCol1 = document.getElementById('col1');
     const getCol2 = document.getElementById('col2');
@@ -73,7 +76,9 @@ function App() {
     getCol5.innerHTML +=
     '<img src="/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
     
-  }
+  
+}
+
 
   // RANDOMIZE NUMBER IN 4 ARRAYS 
   function randomize(){
@@ -259,7 +264,7 @@ function App() {
       
 
       <div className="windowSize">
-      <p><img src="/piratesorry.png" className="pirate-sorry" /></p>
+      <p><img src={PirateSorry} className="pirate-sorry" /></p>
         <p>PLEASE RESIZE WINDOW FOR BETTER EXPERIENCE</p>
       </div>
 
