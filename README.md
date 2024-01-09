@@ -7,10 +7,38 @@ This project is for entertainment purposes only. It does not promote gambling<br
 All the rights reserved to the History Channel and Prometheus Entertainment
 
 ## WHY
-This is a fan project that I made to challenge myself and have some fun with one of my favorite TV Series.
+This is a fan project that I made to challenge myself coding a game.
 
-## INSTRUCTIONS
-soon
+<b>What I used</b>:
+- JavaScript
+- React (for score states only)
+- SVG animation for BIG WIN and EPIC
+
+## SCORES
+
+| ITEM | POINTS| 
+|---|---|
+|gary|50|
+|logo|50|
+|gold|50|
+|rick| 10 | 
+|marty| 10| 
+|craig| 10| 
+|dan|5| 
+|coin|5|  
+|alex|5| 
+|jack|5|  
+|cross|4| 
+|brooch|4| 
+|silver|3| 
+|map|3|
+|fiber|2|  
+|bones|2| 
+|chain|2|  
+|pit|1| 
+|billy|1|  
+|bronze|1|    
+
 
 ## KNOWING ISSUES
 - Safari does not load the images at first
