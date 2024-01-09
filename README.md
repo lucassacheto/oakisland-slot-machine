@@ -2,7 +2,7 @@
 
 # THE CURSE OF OAK ISLAND SLOT MACHINE PROJECT
 
-[LIVE DEMO](https://oakisland-slot-machine.vercel.app/)
+<a href="https://oakisland-slot-machine.vercel.app/" target="_blank">LIVE DEMO</a>
 
 <sub>The slot machine does not use real money<br>
 This project is for entertainment purposes only. It does not promote gambling<br>
