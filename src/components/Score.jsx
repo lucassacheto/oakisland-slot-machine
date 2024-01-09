@@ -1,6 +1,6 @@
 
-import Stars from '../assets/stars.svg?react';
-import TreasureWin from '../assets/treasurechest-win.png';
+import Stars from '/src/assets/stars.svg?react';
+import TreasureWin from '/src/assets/treasurechest-win.png';
 
 // This is a game score component. It will display the current score of the game. It will receive the points prop from the App component and display it.
 
