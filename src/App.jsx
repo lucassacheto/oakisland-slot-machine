@@ -100,8 +100,8 @@ function App() {
   function randomize(){
     let items = [];
     for (let i = 0; i < 4; i++) {
-        let randomNumber = Math.floor(Math.random() * 20); // Generate a random number between 0 and 19
-        //let randomNumber = 5 // EPIC WIN
+        //let randomNumber = Math.floor(Math.random() * 20); // Generate a random number between 0 and 19
+        let randomNumber = 5 // EPIC WIN
         items.push(getName(randomNumber));
     }
     return items;
@@ -246,6 +246,8 @@ function App() {
     const getCol4 = document.getElementById('col4');
     const getCol5 = document.getElementById('col5');
   
+    console.log(randomCol1);
+
     getCol1.innerHTML = ""
     getCol2.innerHTML = "";
     getCol3.innerHTML = "";
@@ -254,11 +256,11 @@ function App() {
   
   
     for (let i = 0; i < 4; i++) {
-        getCol1.innerHTML += '<img src="./src/assets/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
-        getCol2.innerHTML += '<img src="./src/assets/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
-        getCol3.innerHTML += '<img src="./src/assets/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
-        getCol4.innerHTML += '<img src="./src/assets/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
-        getCol5.innerHTML += '<img src="./src/assets/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
+        getCol1.innerHTML += '<img src="/src/assets/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
+        getCol2.innerHTML += '<img src="/src/assets/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
+        getCol3.innerHTML += '<img src="/src/assets/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
+        getCol4.innerHTML += '<img src="/src/assets/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
+        getCol5.innerHTML += '<img src="/src/assets/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
     }
   
     setCredits(credits - 1.0)
