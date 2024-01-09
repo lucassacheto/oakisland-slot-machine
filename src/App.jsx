@@ -1,6 +1,7 @@
 
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react';
 
 import './App.css'
 import Score from './components/Score'
@@ -285,6 +286,7 @@ function App() {
 
         </div>
       </div>
+      {Analytics}
     </>
   )
 }
