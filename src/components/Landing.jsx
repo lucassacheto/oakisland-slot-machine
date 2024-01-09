@@ -24,7 +24,7 @@ function landing() {
         <a onClick={closeWelcome} className="btnPlay">PLAY</a>
         <p>Created by <a href="http://lucassacheto.me" className="made-by" rel="noreferrer" target="_blank">Lucas Sacheto</a></p>
         <p>
-          <a href="https://www.buymeacoffee.com/lucassacheto" className="bmc" rel="noreferrer" target="_blank"><img src="/public/bmc-button.png" /></a>
+          <a href="https://www.buymeacoffee.com/lucassacheto" className="bmc" rel="noreferrer" target="_blank"><img src="./src/assets/bmc-button.png" /></a>
         </p>
       </div>
     </div>
