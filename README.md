@@ -13,6 +13,7 @@ This is a fan project that I made to challenge myself and have some fun with one
 soon
 
 ## KNOWING ISSUES
+- Safari does not load the images at first
 - It takes too long to run the next spin
 
 
