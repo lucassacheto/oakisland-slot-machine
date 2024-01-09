@@ -34,6 +34,8 @@ import Map from '/src/assets/imgItems/map.jpg';
 import Coin from '/src/assets/imgItems/coin.jpg';
 import Logo from '/src/assets/imgItems/logo.jpg';
 
+import BtnRun from '/src/assets/btnRun.png';
+
 function App() {
 
   const [credits, setCredits] = useState(9999)
@@ -293,7 +295,7 @@ function App() {
               <div id="col5" className="spin"></div>
           </div>
 
-          <a id="btnRun" onClick={run}><img id='rotate' src='./src/assets/btnRun.png' /></a>
+          <a id="btnRun" onClick={run}><img id='rotate' src={BtnRun} /></a>
 
           <Score credits={credits} win={win}  />
 
