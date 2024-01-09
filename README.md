@@ -2,6 +2,8 @@
 
 # THE CURSE OF OAK ISLAND SLOT MACHINE PROJECT
 
+[LIVE DEMO](https://oakisland-slot-machine.vercel.app/)
+
 <sub>The slot machine does not use real money<br>
 This project is for entertainment purposes only. It does not promote gambling<br>
 All the rights reserved to the History Channel and Prometheus Entertainment
@@ -50,7 +52,6 @@ This is a fan project that I made to challenge myself coding a game.
 - Bonus round? That's a challenging one
 - Increase bet to get more chance - The final points will be equivalent
 - Responsive design for mobile
-
 
 [<img src="https://raw.githubusercontent.com/lucassacheto/oakisland-slot-machine/main/public/bmc-button.png" style="width:200px">](https://www.buymeacoffee.com/lucassacheto)
 
