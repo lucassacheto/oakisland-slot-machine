@@ -1,8 +1,21 @@
-# React + Vite
+# THE CURSE OF OAK ISLAND SLOT MACHINE PROJECT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## WHY
+This is a fan project that I made to challenge myself and have some fun with one of my favorite TV Series.
 
-Currently, two official plugins are available:
+## INSTRUCTIONS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## KNOWING ISSUES
+- It takes too long to run the next spin
+
+
+## FEATURES AND IDEAS TO COME
+- More sounds for specific characters
+- Bonus round? That's a challenging one
+- Increase bet to get more chance - The final points will be equivalent
+- Responsive design for mobile
+
+
+Thanks for all the support

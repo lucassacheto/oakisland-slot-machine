@@ -13,6 +13,7 @@ import RotateSound from '/public//rotate.mp3'
 import BigWin from '/public/bigwin.wav';
 import EpicWin from '/public/epicwin.mp4';
 
+
 function App() {
 
   const [credits, setCredits] = useState(9999)
@@ -78,7 +79,7 @@ function App() {
     let items = [];
     for (let i = 0; i < 4; i++) {
         let randomNumber = Math.floor(Math.random() * 20); // Generate a random number between 0 and 19
-        //let randomNumber = 1 // EPIC WIN
+        //let randomNumber = 5 // EPIC WIN
         items.push(getName(randomNumber));
     }
     return items;
@@ -132,10 +133,10 @@ function App() {
         console.log("BETTER LUCK NEXT TIME");
       }
 
-      const validatePoint3 = getCommon(validatePoint2 , randomCol4)
+      //const validatePoint3 = getCommon(validatePoint2 , randomCol4)
       //console.log(validatePoint3);
 
-      const validatePoint4 = getCommon(validatePoint3 , randomCol5)
+      //const validatePoint4 = getCommon(validatePoint3 , randomCol5)
       //console.log(validatePoint4);
   
     }else{
@@ -153,7 +154,7 @@ function App() {
     animated.addEventListener("animationstart", () => {
       console.log("Animation started");
       
-      document.getElementById("bgSong").volume = 0.15;
+      document.getElementById("bgSong").volume = 0.12;
       document.getElementById("rotateSound").play();
 
       document.getElementById("btnRun").style.pointerEvents = 'none';
@@ -188,17 +189,18 @@ function App() {
       setTimeout(() => {
         document.getElementById("btnRun").style.pointerEvents = 'auto';
         document.getElementById("btnRun").style.opacity = '1';
-      }, 1000);
-
+      }, 800);
+      
     });
-
-    
 
   }
   
   function run(){
 
     setWin(0)
+
+    document.getElementById("epicwin").currentTime = 0;
+    document.getElementById("epicwin").pause();
 
     function startSpin() {
       const slotItems = document.querySelectorAll('.spin');
