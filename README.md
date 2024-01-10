@@ -42,7 +42,7 @@ This is a fan project that I made to challenge myself coding a game.
 |bronze|1|    
 
 
-## KNOWING ISSUES
+## KNOWN ISSUES
 - Safari does not load the images at first
 - It takes too long to run the next spin
 
