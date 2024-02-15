@@ -8,8 +8,8 @@ import Score from './components/Score'
 import Landing from './components/Landing'
 
 
-import IntroSound from '/src/assets/bgIntro.mp4'
-import BgSong from '/src/assets/bgSong.mp4'
+import SoundMusic from '/src/assets/soundMusic.mp4'
+import SoundWater from '/src/assets/soundWater.mp4'
 import RotateSound from '/src/assets/rotate.mp3'
 import BigWin from '/src/assets/bigwin.wav';
 import EpicWin from '/src/assets/epicwin.mp4';
@@ -20,12 +20,12 @@ import PirateSorry from '/src/assets/piratesorry.png';
 
 function App() {
 
-  const [credits, setCredits] = useState(9999)
-  const [win, setWin] = useState(0)
+  const [credits, setCredits] = useState(9999);
+  const [win, setWin] = useState(0);
 
   // ELEMENTS NAMES TO LOAD THE IMAGES
   const elementsNames = [
-    'rick', 'marty', 'craig', 'dan', 'gary', 'alex', 'jack', 'cross', 'pit', 'billy', 'bronze', 'silver', 'gold', 'brooch', 'fiber', 'bones', 'chain', 'map', 'coin', 'logo']
+    'rick', 'marty', 'craig', 'dan', 'gary', 'alex', 'jack', 'cross', 'pit', 'billy', 'bronze', 'silver', 'gold', 'brooch', 'fiber', 'bones', 'chain', 'map', 'coin', 'logo'];
   
   // ELEMENT SCORES/POINTS
   const elementsScores = { 
@@ -49,7 +49,7 @@ function App() {
     map: '3', 
     coin: '5', 
     logo: '50' 
-  }
+  };
 
 
   // PRELOAD IMAGES
@@ -76,9 +76,8 @@ function App() {
 
     getCol5.innerHTML +=
     '<img src="/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
-    
-  
-}
+     
+};
 
 
   // RANDOMIZE NUMBER IN 4 ARRAYS 
@@ -105,10 +104,10 @@ function App() {
   function getPoints(randomCol1, randomCol2, randomCol3, randomCol4, randomCol5){
     
     const getCommon = (one, two) => {
-      return one.filter(num => two.includes(num))
-    }
+      return one.filter(num => two.includes(num));
+    };
     
-    const validatePoint = getCommon(randomCol1, randomCol2)
+    const validatePoint = getCommon(randomCol1, randomCol2);
   
     if( validatePoint.length !== 0 ){
       
@@ -132,8 +131,8 @@ function App() {
         allWin.forEach(item => {
           const itemName = item.className;
           //console.log( elementsScores[itemName] * allWin.length);
-          setWin(elementsScores[itemName] * allWin.length)
-          setCredits(credits + elementsScores[itemName] * allWin.length)
+          setWin(elementsScores[itemName] * allWin.length);
+          setCredits(credits + elementsScores[itemName] * allWin.length);
         });
 
       }else{
@@ -154,15 +153,16 @@ function App() {
   
   function rotate(slotItems){
 
-    
     //const animated = document.getElementById("rotate");
     const animated = document.getElementById("rotate");
+    const soundMusic = document.getElementById("soundMusic");
+    const rotateSound = document.getElementById("rotateSound");
     //console.log(animated);
     animated.addEventListener("animationstart", () => {
       console.log("Animation started");
       
-      document.getElementById("bgSong").volume = 0.12;
-      document.getElementById("rotateSound").play();
+      soundMusic.volume = 0.12;
+      rotateSound.play();
 
       document.getElementById("btnRun").style.pointerEvents = 'none';
       document.getElementById("btnRun").style.opacity = '0.5';
@@ -179,19 +179,19 @@ function App() {
         item.classList.remove('animate');
        });
 
-      const listStars = document.querySelectorAll('svg')
-      const AllStars = document.querySelectorAll('svg g')
+      const getStars = document.querySelectorAll('svg'); // Get All Stars from SVG
+      const getElementStars = document.querySelectorAll('svg g'); // Get All Stars elements from SVG
       //console.log(AllStars);
       //console.log(listStars.length);
-      listStars.forEach(item => {
+      getStars.forEach(item => {
         item.style.left = Math.floor(Math.random() * 800) + 'px';
         item.style.top = Math.floor(Math.random() * 500) + 'px';
       });
-      AllStars.forEach(item => {
+      getElementStars.forEach(item => {
         item.style.animationDuration = Math.random() * 5 + 's';
       });
 
-      document.getElementById("bgSong").volume = 0.10;
+      soundMusic.volume = 0.10;
 
       setTimeout(() => {
         document.getElementById("btnRun").style.pointerEvents = 'auto';
@@ -215,7 +215,7 @@ function App() {
        item.classList.add('animate');
       });
       //console.log(slotItems);
-      rotate(slotItems)
+      rotate(slotItems);
     }
     startSpin()
     
@@ -231,7 +231,7 @@ function App() {
     const getCol4 = document.getElementById('col4');
     const getCol5 = document.getElementById('col5');
   
-    getCol1.innerHTML = ""
+    getCol1.innerHTML = "";
     getCol2.innerHTML = "";
     getCol3.innerHTML = "";
     getCol4.innerHTML = "";
@@ -239,16 +239,16 @@ function App() {
   
   
     for (let i = 0; i < 4; i++) {
-        getCol1.innerHTML += '<img src="/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
-        getCol2.innerHTML += '<img src="/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
-        getCol3.innerHTML += '<img src="/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
-        getCol4.innerHTML += '<img src="/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
-        getCol5.innerHTML += '<img src="/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
+        getCol1.innerHTML += `<img src="/imgItems/${randomCol1[i]}.jpg" alt="${randomCol1[i]}" class="${randomCol1[i]}">`;
+        getCol2.innerHTML += `<img src="/imgItems/${randomCol2[i]}.jpg" alt="${randomCol2[i]}" class="${randomCol2[i]}">`;
+        getCol3.innerHTML += `<img src="/imgItems/${randomCol3[i]}.jpg" alt="${randomCol3[i]}" class="${randomCol3[i]}">`;
+        getCol4.innerHTML += `<img src="/imgItems/${randomCol4[i]}.jpg" alt="${randomCol4[i]}" class="${randomCol4[i]}">`;
+        getCol5.innerHTML += `<img src="/imgItems/${randomCol5[i]}.jpg" alt="${randomCol5[i]}" class="${randomCol5[i]}">`;
     }
   
-    setCredits(credits - 1.0)
+    setCredits(credits - 1.0);
     
-    getPoints(randomCol1, randomCol2, randomCol3, randomCol4, randomCol5)
+    getPoints(randomCol1, randomCol2, randomCol3, randomCol4, randomCol5);
 
   }
 
@@ -257,8 +257,8 @@ function App() {
 
       <Landing />
 
-      <audio id="introSound" src={IntroSound} loop></audio>
-      <audio id="bgSong" src={BgSong} loop></audio>
+      <audio id="soundWater" src={SoundWater} loop></audio>
+      <audio id="soundMusic" src={SoundMusic} loop></audio>
       <audio id="rotateSound" src={RotateSound}></audio>
       <audio id="bigwin" src={BigWin}></audio>
       <audio id="epicwin" src={EpicWin}></audio>

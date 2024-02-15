@@ -9,7 +9,7 @@ This project is for entertainment purposes only. It does not promote gambling<br
 All the rights reserved to the History Channel and Prometheus Entertainment
 
 ## WHY
-This is a fan project that I made to challenge myself coding a game.
+This is a fan project that I made to challenge myself to code a game.
 
 <b>What I used</b>:
 - JavaScript
