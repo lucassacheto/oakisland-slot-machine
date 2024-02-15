@@ -8,8 +8,8 @@ import Score from './components/Score'
 import Landing from './components/Landing'
 
 
-import IntroSound from '/src/assets/bgIntro.mp4'
-import BgSong from '/src/assets/bgSong.mp4'
+import SoundMusic from '/src/assets/soundMusic.mp4'
+import SoundWater from '/src/assets/soundWater.mp4'
 import RotateSound from '/src/assets/rotate.mp3'
 import BigWin from '/src/assets/bigwin.wav';
 import EpicWin from '/src/assets/epicwin.mp4';
@@ -76,8 +76,7 @@ function App() {
 
     getCol5.innerHTML +=
     '<img src="/imgItems/' + elementsNames[17] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[18] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[19] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'> <img src="/imgItems/' + elementsNames[0] + '.jpg" alt='+elementsNames[1]+' class='+elementsNames[1]+'>';
-    
-  
+     
 }
 
 
@@ -154,14 +153,13 @@ function App() {
   
   function rotate(slotItems){
 
-    
     //const animated = document.getElementById("rotate");
     const animated = document.getElementById("rotate");
     //console.log(animated);
     animated.addEventListener("animationstart", () => {
       console.log("Animation started");
       
-      document.getElementById("bgSong").volume = 0.12;
+      document.getElementById("soundMusic").volume = 0.12;
       document.getElementById("rotateSound").play();
 
       document.getElementById("btnRun").style.pointerEvents = 'none';
@@ -191,7 +189,7 @@ function App() {
         item.style.animationDuration = Math.random() * 5 + 's';
       });
 
-      document.getElementById("bgSong").volume = 0.10;
+      document.getElementById("soundMusic").volume = 0.10;
 
       setTimeout(() => {
         document.getElementById("btnRun").style.pointerEvents = 'auto';
@@ -231,7 +229,7 @@ function App() {
     const getCol4 = document.getElementById('col4');
     const getCol5 = document.getElementById('col5');
   
-    getCol1.innerHTML = ""
+    getCol1.innerHTML = "";
     getCol2.innerHTML = "";
     getCol3.innerHTML = "";
     getCol4.innerHTML = "";
@@ -239,11 +237,11 @@ function App() {
   
   
     for (let i = 0; i < 4; i++) {
-        getCol1.innerHTML += '<img src="/imgItems/' + randomCol1[i] + '.jpg" alt='+randomCol1[i]+' class='+randomCol1[i]+'>';
-        getCol2.innerHTML += '<img src="/imgItems/' + randomCol2[i] + '.jpg" alt='+randomCol2[i]+' class='+randomCol2[i]+'>';
-        getCol3.innerHTML += '<img src="/imgItems/' + randomCol3[i] + '.jpg" alt='+randomCol3[i]+' class='+randomCol3[i]+'>';
-        getCol4.innerHTML += '<img src="/imgItems/' + randomCol4[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol4[i]+'>';
-        getCol5.innerHTML += '<img src="/imgItems/' + randomCol5[i] + '.jpg" alt='+randomCol4[i]+' class='+randomCol5[i]+'>';
+        getCol1.innerHTML += `<img src="/imgItems/${randomCol1[i]}.jpg" alt="${randomCol1[i]}" class="${randomCol1[i]}">`;
+        getCol2.innerHTML += `<img src="/imgItems/${randomCol2[i]}.jpg" alt="${randomCol2[i]}" class="${randomCol2[i]}">`;
+        getCol3.innerHTML += `<img src="/imgItems/${randomCol3[i]}.jpg" alt="${randomCol3[i]}" class="${randomCol3[i]}">`;
+        getCol4.innerHTML += `<img src="/imgItems/${randomCol4[i]}.jpg" alt="${randomCol4[i]}" class="${randomCol4[i]}">`;
+        getCol5.innerHTML += `<img src="/imgItems/${randomCol5[i]}.jpg" alt="${randomCol5[i]}" class="${randomCol5[i]}">`;
     }
   
     setCredits(credits - 1.0)
@@ -257,8 +255,8 @@ function App() {
 
       <Landing />
 
-      <audio id="introSound" src={IntroSound} loop></audio>
-      <audio id="bgSong" src={BgSong} loop></audio>
+      <audio id="soundWater" src={SoundWater} loop></audio>
+      <audio id="soundMusic" src={SoundMusic} loop></audio>
       <audio id="rotateSound" src={RotateSound}></audio>
       <audio id="bigwin" src={BigWin}></audio>
       <audio id="epicwin" src={EpicWin}></audio>

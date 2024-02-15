@@ -4,10 +4,10 @@ function landing() {
 
   const closeWelcome = () => {
     document.getElementsByClassName("overlay")[0].classList.add("hide");
-    document.getElementById("introSound").play()
-    document.getElementById("introSound").volume = 0.2
-    document.getElementById("bgSong").play()
-    document.getElementById("bgSong").volume = 0.10
+    // document.getElementById("soundMusic").play()
+    // document.getElementById("soundMusic").volume = 0.2
+    // document.getElementById("soundWater").play()
+    // document.getElementById("soundWater").volume = 0.2
     
   }
 
